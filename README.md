@@ -1,4 +1,4 @@
-# 模拟微信聊天
+# chat for vue
 ## Build Setup
 
 ``` bash

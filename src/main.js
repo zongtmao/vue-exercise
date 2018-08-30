@@ -1,10 +1,13 @@
-import 'babel-polyfill';
+import 'babel-polyfill'
 
-import Vue from 'vue';
-import App from './App';
-import store from './store';
+import Vue from 'vue'
+import App from './App'
+import store from './store'
+import axios from 'axios'
 
-Vue.config.devtools = true;
+axios.defaults.baseURL = 'https://wd3304268149qkrfbn.wilddogio.com/'
+
+Vue.config.devtools = true
 
 new Vue({
     el: 'body',

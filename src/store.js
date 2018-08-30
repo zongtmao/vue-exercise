@@ -75,6 +75,15 @@ const store = new Vuex.Store({
                 self: true
             });
         },
+        // 接收消息
+        RECEIVE_MESSAGE({ sessions, currentSessionId }, content){
+            let session = sessions.find(item => item.id === currentSessionId);
+            session.messages.push({
+                content: content,
+                date: new Date(),
+                self: false
+            });
+        },
         // 选择会话
         SELECT_SESSION(state, id) {
             state.currentSessionId = id;
@@ -99,6 +108,7 @@ export default store;
 export const actions = {
     initData: ({ dispatch }) => dispatch('INIT_DATA'),
     sendMessage: ({ dispatch }, content) => dispatch('SEND_MESSAGE', content),
+    receiveMessage:({ dispatch }, content) => dispatch('RECEIVE_MESSAGE', content),
     selectSession: ({ dispatch }, id) => dispatch('SELECT_SESSION', id),
     search: ({ dispatch }, value) => dispatch('SET_FILTER_KEY', value)
 };

@@ -1,16 +1,3 @@
-<template>
-    <div id="app">
-        <div class="sidebar">
-            <card></card>
-            <list></list>
-        </div>
-        <div class="main">
-            <message></message>
-            <text></text>
-        </div>
-    </div>
-</template>
-
 <script>
     import { actions } from './store';
 
@@ -29,6 +16,19 @@
         }
     }
 </script>
+
+<template>
+    <div id="app">
+        <div class="sidebar">
+            <card></card>
+            <list></list>
+        </div>
+        <div class="main">
+            <message></message>
+            <text></text>
+        </div>
+    </div>
+</template>
 
 <style lang="less" scoped>
     #app {
