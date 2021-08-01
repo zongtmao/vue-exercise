@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mvvm-app">
+        <input type="text" v-model="name" placeholder="姓名" />
+        <input type="text" v-model="age" placeholder="年龄" />
+
+
+        <div>
+            <p>姓名：<span>{{name}}</span></p>
+            <p>
+                <p>年龄：<span>{{age}}</span></p>
+            </p>
+        </div>
+
+
+        <button id="btn">设置姓名为zongtmao并操作dom</button>
+    </div>
+
+    <script src="mvvm.js"></script>
+    <script>
+        const MvvmApp = new MVVM('#mvvm-app', {
+            name: '',
+            age: ''
+        });
+
+        document.querySelector('#btn').addEventListener('click', () => {
+            MvvmApp.setName('name', 'zongtmao');
+        });
+    </script>
+</body>
+</html>
